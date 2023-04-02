@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beauty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  
+  
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@1&family=Playfair+Display:ital,wght@1,500&display=swap');
+    body{
+    /* font-family: 'Changa One', cursive; */
+    font-family: 'Playfair Display', serif;
+    }
+    #carouselExampleCaptions .carousel-item img{
+      object-fit: cover;
+      object-position: center;
+      height: 80vh;
+    }
+    .navbar-nav .nav-link{
+color: black;
+font-family: 'Playfair Display', serif;
+    }
+    .navbar-nav .nav-link:hover{
+      background-color: #9d836f;
+      color: aliceblue;
+    }
+    .carousel-caption{
+      bottom: 150px;
+      z-index: 2;
+    }
+    #gallery-popup .modal-img{
+      width: 100%;
+    }
+    .zoom-n-rotate{
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .zoom-n-rotate img{
+      transition: transform .5s ease-in-out;
+    }
+    .zoom-n-rotate:hover img{
+      transform: scale(1.5);
+    }
+    .team_wrapper .card{
+      padding: 2.25rem;
+    }
+    .team_wrapper .card:hover{
+      transform: translateY(-0.625rem) ;
+      -webkit-transform: translateY(-0.625rem) ;
+    }
+    .team_wrapper .team-img{
+      margin: 0;
+      padding-left: 100px;
+
+    }
+    .footer_wrapper ul li{
+      margin-bottom: 5px;
+      list-style: none;
+      font-size: 15px;
+    }
+    .footer_wrapper .contact-info ul a{
+      padding: 0px;   
+    }
+    .footer_wrapper ul li a{
+      color: white;
+      text-decoration: none;
+    }
+    .footer_wrapper ul li a,
+    .footer_wrapper p{
+      color: white;
+      font-size: 15px;
+      padding-left: 20px;
+      position: relative;
+      -webkit-transition: all 0.3s ease-out 0;
+      transition: all 0.3s ease-out 0;
+    }
+    .footer_wrapper ul li a::before{
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      font-weight: 600;
+    }
+    .footer_wrapper .link-widget li a:hover{
+      margin-left: .625rem;
+      color: #080808;
+    }
+    .footer_wrapper ::placeholder{
+      color: rgb(218, 218, 213);
+    }
+    .footer_wrapper .form-control{
+      color: rgb(218, 218, 213);
+    }
+    .footer_wrapper .form-control:focus{
+      outline: none;
+      box-shadow: none;
+      border-color: white;
+    }
+    .footer_wrapper .copyright-section{
+      background-color: rgb(62, 58, 58);
+      padding: 2rem 0 1rem;
+      text-align: center;
+      text-decoration: none;
+    }
+    .footer_wrapper .copyright-section a{
+      color: white;
+      font-weight: 600;
+    }
+  </style>
+  
+  <body>
+    <!-- ....navbar... -->
+
+    <header>
+      <nav class="navbar navbar-expand-lg navbar fixed-top  shadow p-2" style="background-color:#b6977f;">
+        <div class="container-fluid">
+                <a class="navbar-brand fs-5" style="color: rgb(10, 11, 11);" data-aos="fade-right">ZM Store</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fs-5 text-center"  data-aos="fade-down">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page"href="index.html" >Home</a>
+              </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="Products.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Products</a>
+                <ul class="dropdown-menu" style="background-color:#a58d6e">
+                  <li><a class="dropdown-item" href="Perfumes.html">Perfumes</a></li>
+                  <li><a class="dropdown-item" href="Brushes.html">Brushes</a></li>
+                  <li><a class="dropdown-item" href="lipsticks.html">Lipsticks</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="About .html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search" data-aos="fade-left">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-dark" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+       
+      </nav>
+    </header>
+
+<!-- .....slideshow..... -->
+
+    <section>
+      <div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img  src="https://media.istockphoto.com/id/1326570912/photo/glass-bottle-of-perfume-on-golden-silk-background.jpg?s=612x612&w=0&k=20&c=rZwmd4ks8TjmgKOlkVJqb1_A2o-44y2lDYCgo8vk_1c=" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-block d-md-block fs-4" >
+        <div class="container">
+          <div class="row ">
+            <div class="col-lg-7">
+              <h1 align="left" style="color: #0b0b0b; font-size: 50px;" data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"> <b>BEAUTY COLLECTION</b></h1>
+                 <p  align="left" style="color: rgb(12, 12, 12);"  data-aos="fade-left"
+                 data-aos-anchor="#example-anchor"
+                 data-aos-offset="500"
+                 data-aos-duration="500">You Are Never Fully Dressed  <br> Without Perfume</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://t4.ftcdn.net/jpg/03/46/80/55/360_F_346805590_S03cqUdee9FB9aJ9HcPcT0NwhOPHCZjV.webp" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block fs-4">
+        <h4 align="left"style="color: #8f7960; font-size:50px" data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine">GET 10% OFF <br>On Every Brush Kit  </h4>
+        <p  align="left" style="color: rgb(81, 71, 54);font-size:20px" data-aos="fade-left"
+        data-aos-anchor="#example-anchor"
+        data-aos-offset="500"
+        data-aos-duration="500">With A Good Makeup Brush,<br> Every Woman Can Be An Artist</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://png.pngtree.com/background/20220731/original/pngtree-cosmetics-black-gold-lipstick-three-dimensional-model-picture-image_1891722.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block fs-4">
+         <div class="container">
+           <div class="row">
+             <div class="col-lg-7">
+               <h4 align="left"style="color: #8f7960; font-size:50px; margin-bottom:30px  "data-aos="fade-right "data-aos-offset="300"data-aos-easing="ease-in-sine"> <b>LIPSTICK</b> </h4>
+               <p align="left" style="color: rgb(81, 71, 54);font-size:20px " data-aos=fade-left data-aos-anchor="#example-anchor"data-aos-offset="500"data-aos-duration="500">Lips <b> WithOut</b>Lipsticks Are <br> Like  Cake WithOut<b>Frosting</b></p>
+             </div>
+               </div>
+            </div>
+       </div> 
+
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+ 
+</div>
+    </section>
+
+ 
+
+   
+
+     <!-- ....product text... -->
+  <section class="products">
+    <div class="container-fluid my-5">
+      <div>
+        <h2 class="text-center col-sm-12" data-aos="fade-down">NEW ARRIVAL </h2>
+        <hr / class="w-25 m-auto">
+      </div>
+    </section>
+
+        <!-- ...product grid.... -->
+     
+    <section id="Products">
+      <div class="container-fluid py-5 " style="background-color:rgb(233, 198, 159);">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 mb-4 text-center">
+              <img src="./pr1.jpg" style="height: 40vh;box-shadow: 0 0 15px rgba(0,0,0,0.3)" class="img-fluid"  data-aos="zoom-in-up" alt="...">
+            </div>     
+            <div class="col-md-4 col-sm-6 mb-4 text-center">
+              <img src="./pr3.jpg" style="height: 40vh;box-shadow: 0 0 15px rgba(0,0,0,0.3)" class="img-fluid"  data-aos="zoom-in-up" alt="...">
+            </div>  
+            <div class="col-md-4 col-sm-6 mb-4 text-center">
+              <img src="./m1.jpg" style="height: 40vh;box-shadow: 0 0 15px rgba(0,0,0,0.3)" class="img-fluid"  data-aos="zoom-in-up"alt="...">
+            </div>  
+            <div class="col-md-4 col-sm-6 mb-4 text-center">
+              <img src="https://static-01.daraz.pk//p/2a5eddc3650c660527059784db9938d1.jpg" style="height: 40vh; width: 250px;  box-shadow: 0 0 15px rgba(0,0,0,0.3)  " data-aos="zoom-in-up" class="img-fluid" alt="...">
+            </div>  
+            <div class="col-md-4 col-sm-6 mb-4 text-center">
+              <img src="https://hudabeauty.com/dw/image/v2/BCNC_PRD/on/demandware.static/-/Sites-huda-master-catalog/default/dw753e3703/images/Ultimate_Lip_Trio_Jan_2023/HB-LipKitTrio-Stylized-0070.jpg?sw=1242&sh=1242&sm=fit" style="height: 40vh;box-shadow: 0 0 15px rgba(0,0,0,0.3)"  data-aos="zoom-in-up"class="img-fluid" alt="...">
+            </div>  
+            <div class="col-md-4 col-sm-6 mb-4 text-center">
+              <img src="https://cdn.shopify.com/s/files/1/0581/6398/6485/products/DSC06208_2048x2048.jpg?v=1668663648" style="height: 40vh;box-shadow: 0 0 15px rgba(0,0,0,0.3)" class="img-fluid"  data-aos="zoom-in-up" alt="...">
+            </div>     
+        </div>  
+      </div>
+    </section>
+  
+
+
+ <!-- ...... services.... -->
+
+    <section class="services">
+      <div class="container-fluid my-5">
+        <div>
+          <h2 class="text-center" data-aos="fade-right" >OUR SERVICES </h2>
+          <hr / class="w-25 m-auto">
+        </div>
+      </section>
+    <section id="services">
+      <div class="container-fluid py-5 " style="background-color:rgb(159, 158, 158);">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 mb-4 text-center">
+            <div class="card zoom-n-rotate" style="width: 70%;" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
+              <img src="./o1.webp" style="height: 40vh;box-shadow: 0 0 15px rgba(0,0,0,0.3)" class="img-fluid" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Organic Products</h5>
+                <p class="card-text">We Develop Vegan & Organic Cosmetic Formulation For Any Skin Type.</p>
+              
+              </div>
+           
+            </div> 
+          </div>
+          <div class="col-md-4 col-sm-6 mb-4 text-center">
+            <div class="card zoom-n-rotate" style="width: 70%; box-shadow: 0 0 15px rgba(0,0,0,0.3)" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
+              <img src="./o2.jpg" style="height: 40vh;" class="img-fluid" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Design</h5>
+                <p class="card-text">We Make An Astonishing Cosmetic Packaging & Label Design Four Our Customers.</p>
+              
+              </div>
+          
+            </div> 
+          </div>
+          <div class="col-md-4 col-sm-6 mb-4 text-center">
+            <div class="card zoom-n-rotate" style="width: 70%; box-shadow: 0 0 15px rgba(0,0,0,0.3)" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
+              <img src="./br1.jpg" style="height: 40vh;" class="img-fluid" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Safety & Effency Tests</h5>
+                <p class="card-text">We Check Every Product For skin Safety. Without Testing We don't Launch Our Products </p>
+          
+              </div>
+              
+            </div> 
+          </div>
+        </div>
+        </div>
+  </section>
+  
+  <!-- .....team.... -->
+
+  <section id="team" class="team_wrapper wrapper">
+    <div class="container ">
+      <div class="row my-5">
+        <div class="col-sm-12 text-center mb-2">
+          <h3 class="text-black" data-aos="fade-left">OUR TEAM</h3>
+          <hr / class="w-25 m-auto">
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-md-4 col-sm-6 mb-4 ">
+          <div class="card rounded-3"  style="background-color: rgb(219, 213, 213);" data-aos="flip-left">
+            <div class="team-img">
+              <img src="./t1.webp" class="rounded-circle" alt="rounded image" style="height: 25vh; width:65% ;">
+            </div>
+            <div class="team-info pt-4 text-center">
+              <h5>Zohaan</h5>
+              <p>Owner</p>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4 ">
+          <div class="card rounded-3" style="background-color: rgb(219, 213, 213);" data-aos="flip-left">
+            <div class="team-img">
+              <img src="./t1.jpg" class="rounded-circle" alt="rounded image" style="height: 25vh; width:65%;">
+            </div>
+            <div class="team-info pt-4 text-center">
+              <h5>Farah</h5>
+              <p>Incharge</p>             
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card rounded-3 "  style="background-color: rgb(219, 213, 213);" data-aos="flip-left">
+            <div class="team-img">
+              <img  src="./t2.jpg" class="rounded-circle" alt="Rounded image" style="height: 25vh; width:65%; ">
+            </div>
+            <div class="team-info pt-4 text-center">
+              <h5>Mahaad</h5>
+              <p>Co-Director</p>             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ...footer... -->
+        <footer id="contact" class="footer_wrapper wrapper" style="background-color: gray;">
+          <div class="container pb-3">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 mb-4">
+                <h5 style=" font-size: 20px; margin-top: 20px;">Company Location</h5 >
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi est impedit fugit doloribus quidem, consequuntur quisquam velit accusamus illum nisi nostrum rerum, odit corrupti, fuga quia nemo esse tempore. Necessitatibus!</p>
+                <div class="contact-info">
+                  <ul class="list-unstyled">
+                    <li><a href="#"><i class='bx bxs-home-circle me-3'></i>Aisha Manzil Bl-7 Fb Area</a></li>
+                    <li><a href="#"><i class='bx bx-phone me-3'></i>+92 000 9999</a></li>
+                    <li><a href="#"><i class='bx bx-envelope me-3'></i></a>info@hafizawania654@gmail.com</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-4 mt-3">
+                <h5>More Links</h5>
+                <ul class="link-widget p-0">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Our Products</a></li>
+                  <li><a href="#">Our Store</a></li>
+                  <li><a href="#">Return Policy</a></li>
+                </ul>
+              </div>
+
+              <div class="col-lg-3 col-md-6 mb-4 mt-3">
+                <h5>Stay Connected</h5>
+                <div class="form-group mb-4">
+                  <input type="email" class="form-control bg-transparent" placeholder="Enter Your Email here">                 
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="container-fluid copyright-section">
+            <p class="p-0">copyright <a href="#">@ WANIA KHAN.</a>All Rights Reserved</p>
+          </div>
+
+        </footer>
+
+          
+      
+    
+    
+
+
+   
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+  </body>
+</html>
